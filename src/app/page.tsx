@@ -1,15 +1,11 @@
 import Home from "@/components/views/home";
 import { getMetrics } from "@/services";
-import { MetricsType, PageFC } from "@/utils/types";
-import { toast } from "react-toastify";
+import { MetricResponseType, PageFC } from "@/utils/types";
 
 const HomePage: PageFC = async () => {
-  const { data, error } = await getMetrics();
+  const metric = await getMetrics();
 
-  if (error) {
-    toast.error(error.message);
-  }
-  return <Home metrics={data as MetricsType} />;
+  return <Home metrics={metric as MetricResponseType} />;
 };
 
 export default HomePage;

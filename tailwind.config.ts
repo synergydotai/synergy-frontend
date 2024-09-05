@@ -35,11 +35,14 @@ const config: Config = {
         x10: "10px",
         x20: "20px"
       },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-        cyborg: ""
+      padding: {
+        7.5: "1.875rem" //30px
+      },
+      gap: {
+        7.5: "1.875rem" //30px
+      },
+      inset: {
+        7.5: "1.875rem" // 30px
       }
     }
   },

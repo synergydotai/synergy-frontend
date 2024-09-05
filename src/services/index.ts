@@ -7,7 +7,7 @@ export const getMetrics = async () => {
     return { data };
   } catch (err) {
     return {
-      error: err instanceof Error ? err : Error("Unable to get metric data"),
+      error: err instanceof Error ? err.message : "Unable to get metric data",
       data: {}
     };
   }

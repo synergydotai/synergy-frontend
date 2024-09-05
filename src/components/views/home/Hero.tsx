@@ -2,50 +2,31 @@ import { FC } from "@/utils/types";
 import Image from "next/image";
 import React from "react";
 import networkImage from "@/assets/images/hero-network.svg";
-import Button from "@/components/atoms/Button";
-import Icon from "@/components/atoms/Icon";
 import { HOME_SECTIONS } from "@/utils/constants";
 
 const Hero: FC = () => {
   return (
     <section className="px-4 sm:px-8" id={HOME_SECTIONS.HERO}>
-      <div className="container mx-auto flex flex-col lg:flex-row gap-8">
-        <div className="lg:max-w-[570px] flex flex-col gap-8">
+      <div className="container mx-auto flex flex-col xl:flex-row gap-8">
+        <div className="xl:w-1/2 flex flex-col gap-8">
           <div className="bg-white px-6 py-10 sm:px-10 sm:py-16 rounded-x20 lg:flex-1">
-            <h1 className="text-2xl sm:text-5xl text-dark mb-7 sm:mb-24 font-sans !leading-tight">
-              Exploring synergies. Bridging{" "}
+            <h1 className="text-4xl md:text-6xl 2xl:text-[80px] max-w-[500px] md:max-w-[700px] 2xl:max-w-full text-dark mb-7 sm:mb-20 font-sans !leading-tight">
+              Exploring synergies. <br /> Bridging{" "}
               <span className="text-primary">AI</span> and the{" "}
               <span className="text-primary">Real World</span>
             </h1>
-            <ul className="text-gray list-disc list-inside font-mono  text-sm sm:text-xl">
-              <li className="mt-5">
+            <ul className="px-6 sm:pl-10 text-gray list-disc list-outside font-mono lg:max-w-[550px] text-sm sm:text-2xl">
+              <li className="mt-5 sm:mt-10">
                 Lowering the barrier to leverage bittensor products
               </li>
-              <li className="mt-5">
+              <li className="mt-5 sm:nt-10">
                 Aiming for long term sustainability of the ecosystem
               </li>
-              <li className="mt-5">Loyal to bittensor ethos</li>
+              <li className="mt-5 sm:mt-10">Loyal to bittensor ethos</li>
             </ul>
           </div>
-          <div className="btns flex flex-col gap-4">
-            <Button
-              className="p-5 rounded-x20"
-              startContent={<Icon name="icon-code-02" />}
-              endContent={<Icon name="icon-chevron-right" />}
-            >
-              btcli stake...
-            </Button>
-            <Button
-              className="p-5 rounded-x20 gap-4"
-              color="gray"
-              disabled
-              endContent={<Icon name="icon-chevron-right" />}
-            >
-              Delegate
-            </Button>
-          </div>
         </div>
-        <div className="bg-white rounded-x20 h-[170px] lg:h-[unset]">
+        <div className="bg-white xl:w-1/2 rounded-x20 h-[400px] xl:h-[unset] xl:min-h-[800px]">
           <Image
             width={1000}
             height={900}

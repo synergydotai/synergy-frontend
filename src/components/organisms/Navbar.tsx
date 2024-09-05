@@ -25,7 +25,7 @@ const Navbar = () => {
           <nav className="flex-1">
             <ul className="flex items-center justify-center gap-10">
               <NavItem href={`/#${HOME_SECTIONS.HERO}`}>Home</NavItem>
-              <NavItem href={`/#${HOME_SECTIONS.PRODUCTS}`}>
+              <NavItem href={`/#${HOME_SECTIONS.BENEFITS}`}>
                 Our Products
               </NavItem>
               <NavItem href="">Consulting</NavItem>
@@ -33,8 +33,6 @@ const Navbar = () => {
           </nav>
           <Button
             className="py-4 px-7 rounded-x10 gap-4"
-            color="gray"
-            disabled
             endContent={<Icon name="icon-chevron-right" />}
           >
             Delegate

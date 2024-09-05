@@ -3,6 +3,7 @@ import "./globals.css";
 import { beVietnamPro, robotoMono } from "@/assets/fonts";
 import WebsiteLayout from "@/components/views/layout/website";
 import { LayoutFC } from "@/utils/types";
+import { ToastContainer } from "react-toastify";
 
 export const metadata: Metadata = {
   title: "Synergy",
@@ -14,6 +15,7 @@ const RootLayout: LayoutFC = ({ children }) => {
     <html className={`${robotoMono.variable} ${beVietnamPro.variable}`}>
       <body>
         <WebsiteLayout>{children}</WebsiteLayout>
+        <ToastContainer position="bottom-left" />
       </body>
     </html>
   );

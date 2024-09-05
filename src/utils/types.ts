@@ -45,3 +45,7 @@ export type MetricsType = {
   dailyValidatorReward: number;
   dailyValidatorRewardUsd: number;
 };
+export type MetricResponseType = {
+  data: MetricsType;
+  error: string;
+};

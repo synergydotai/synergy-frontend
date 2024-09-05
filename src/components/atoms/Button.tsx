@@ -3,7 +3,7 @@ import { FC } from "@/utils/types";
 import React, { HTMLProps, ReactNode } from "react";
 
 type Props = Omit<HTMLProps<HTMLButtonElement>, "type" | "size"> & {
-  color?: "primary" | "gray" | "white";
+  color?: "primary" | "gray" | "white" | "black";
   type?: "button" | "submit" | "reset";
   startContent?: ReactNode;
   endContent?: ReactNode;
@@ -13,7 +13,8 @@ const buttonTypes = {
   primary:
     "bg-primary text-white hover:bg-primary-hover disabled:bg-gray-lighter disabled:text-gray-light",
   gray: "bg-gray-darker text-white hover:bg-gray-hover disabled:bg-gray-lighter disabled:text-gray-light",
-  white: "bg-white text-gray-darker hover:bg-gray-bg"
+  white: "bg-white text-gray-darker hover:bg-gray-bg",
+  black: "bg-gray-darker text-white hover:bg-gray-hover"
 };
 
 const Button: FC<Props> = ({
