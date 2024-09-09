@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import networkImage from "@/assets/images/hero-network.svg";
 import { HOME_SECTIONS } from "@/utils/constants";
+import { ParticlesPro } from "@/components/atoms/Particles";
 
 const Hero: FC = () => {
   return (
@@ -26,15 +27,8 @@ const Hero: FC = () => {
             </ul>
           </div>
         </div>
-        <div className="bg-white xl:w-1/2 rounded-x20 h-[400px] xl:h-[unset] xl:min-h-[800px]">
-          <Image
-            width={1000}
-            height={900}
-            src={networkImage}
-            priority
-            alt="hero image"
-            className="opacity-90 mix-blend-difference h-full w-full object-cover rounded-x20"
-          />
+        <div className="xl:w-1/2 rounded-x20 h-[400px] xl:h-[unset] xl:min-h-[800px] overflow-hidden">
+          <ParticlesPro />
         </div>
       </div>
     </section>
