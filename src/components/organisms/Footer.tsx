@@ -3,7 +3,7 @@ import Logo from "../atoms/Logo";
 import Link from "next/link";
 import SocialMediaLink from "../atoms/SocialMediaLink";
 import NavItem from "../atoms/NavItem";
-import { HOME_SECTIONS } from "@/utils/constants";
+import { HOME_SECTIONS, X_PROFILE_URL } from "@/utils/constants";
 import { FC } from "@/utils/types";
 import { cls } from "@/utils/helper";
 import Button from "../atoms/Button";
@@ -91,10 +91,12 @@ const Footer: FC = () => {
               Social media:
             </h5>
             <div className="grid grid-cols-2 gap-4">
-              <SocialMediaLink />
-              <SocialMediaLink />
-              <SocialMediaLink />
-              <SocialMediaLink />
+              <SocialMediaLink icon="icon-x" link={X_PROFILE_URL}>
+                X
+              </SocialMediaLink>
+              <SocialMediaLink icon="icon-linkedin">Linkedin</SocialMediaLink>
+              <SocialMediaLink icon="icon-github">Github</SocialMediaLink>
+              <SocialMediaLink icon="icon-discord">Discord</SocialMediaLink>
             </div>
           </div>
         </div>

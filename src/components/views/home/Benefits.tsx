@@ -5,7 +5,7 @@ import customSupport from "@/assets/images/custom-support.svg";
 import flexibleSolutions from "@/assets/images/flexible-solution.svg";
 import robustSecurity from "@/assets/images/robust-security.svg";
 import stableInfrastructure from "@/assets/images/stable-infrastructure.svg";
-import { HOME_SECTIONS } from "@/utils/constants";
+import { HOME_SECTIONS, VAAS_APP_URL } from "@/utils/constants";
 import ProductCard from "@/components/atoms/ProductCard";
 import bgDesign from "@/assets/images/products-bg-design.svg";
 import Image from "next/image";
@@ -26,7 +26,9 @@ const Benefits = () => {
         {/* products */}
         <div className="grid lg:grid-cols-2 my-10 gap-7 md:gap-7.5">
           <div className="grid sm:grid-cols-2 gap-4 md:gap-y-7.5 md:gap-x-8 ">
-            <ProductCard isActive>Validator As A Service</ProductCard>
+            <ProductCard isActive link={VAAS_APP_URL}>
+              Validator As A Service
+            </ProductCard>
             <ProductCard src={gameController} />
             <ProductCard src={shoppingCart} />
             <ProductCard />

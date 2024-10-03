@@ -4,15 +4,18 @@ import React from "react";
 import Icon from "./Icon";
 import Image from "next/image";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import Link from "next/link";
 
 type Props = {
   isActive?: boolean;
   src?: StaticImport;
+  link?: string;
 };
 
-const ProductCard: FC<Props> = ({ children, isActive, src }) => {
+const ProductCard: FC<Props> = ({ children, isActive, src, link }) => {
   return (
-    <div
+    <Link
+      href={link || ""}
       className={cls(
         "w-full relative rounded-x20",
         isActive ? "bg-gray-darker" : "bg-gray-lighter"
@@ -43,7 +46,7 @@ const ProductCard: FC<Props> = ({ children, isActive, src }) => {
         </span>
         <Icon name="icon-chevron-right" />
       </div>
-    </div>
+    </Link>
   );
 };
 
