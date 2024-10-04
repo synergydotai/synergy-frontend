@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("react-toastify/dist/ReactToastify.css");
 
 @layer base {
   @import url(../assets/icomoon/style.css);

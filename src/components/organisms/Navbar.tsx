@@ -6,13 +6,14 @@ import Button from "../atoms/Button";
 import Icon from "../atoms/Icon";
 import NavItem from "../atoms/NavItem";
 import Navdropdown from "../molecules/Navdropdown";
-import { HOME_SECTIONS } from "@/utils/constants";
+import { HOME_SECTIONS, ROUTES } from "@/utils/constants";
+import Link from "next/link";
 
 const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false);
 
   // functions
-  const toggleNav = () => setNavOpen(curr => !curr);
+  const toggleNav = () => setNavOpen((curr) => !curr);
   const closeNav = () => setNavOpen(false);
 
   return (
@@ -31,12 +32,14 @@ const Navbar = () => {
               <NavItem href="">Consulting</NavItem>
             </ul>
           </nav>
-          <Button
-            className="py-4 px-7 rounded-x10 gap-4"
-            endContent={<Icon name="icon-chevron-right" />}
-          >
-            Delegate
-          </Button>
+          <Link href={ROUTES.DELEGATE}>
+            <Button
+              className="py-4 px-7 rounded-x10 gap-4"
+              endContent={<Icon name="icon-chevron-right" />}
+            >
+              Delegate
+            </Button>
+          </Link>
         </div>
         <Button
           className="w-10 h-10 rounded-lg z-10 block lg:hidden"

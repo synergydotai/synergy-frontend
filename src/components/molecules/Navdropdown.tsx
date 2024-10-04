@@ -5,6 +5,8 @@ import Icon from "../atoms/Icon";
 import { cls } from "@/utils/helper";
 import NavItem from "../atoms/NavItem";
 import { FC } from "@/utils/types";
+import Link from "next/link";
+import { HOME_SECTIONS, ROUTES } from "@/utils/constants";
 
 type Props = {
   isOpen: boolean;
@@ -46,33 +48,37 @@ const Navdropdown: FC<Props> = ({ isOpen, close }) => {
           <nav className="w-full">
             <ul className="flex flex-col items-start justify-center gap-7 w-full">
               <NavItem
-                href=""
+                href={`/#${HOME_SECTIONS.HERO}`}
                 classNames={{ li: "w-full lg:w-[unset]", a: "w-full block" }}
+                onClick={close}
               >
                 Home
               </NavItem>
               <NavItem
-                href="#our-products"
+                href={`/#${HOME_SECTIONS.BENEFITS}`}
                 classNames={{ li: "w-full lg:w-[unset]", a: "w-full block" }}
+                onClick={close}
               >
                 Our Products
               </NavItem>
               <NavItem
                 href=""
                 classNames={{ li: "w-full lg:w-[unset]", a: "w-full block" }}
+                onClick={close}
               >
                 Consulting
               </NavItem>
             </ul>
           </nav>
-          <Button
-            className="py-4 px-7 rounded-x10 gap-4 w-full"
-            color="gray"
-            disabled
-            endContent={<Icon name="icon-chevron-right" />}
-          >
-            Delegate
-          </Button>
+          <Link href={ROUTES.DELEGATE} className="block w-full" onClick={close}>
+            <Button
+              className="py-4 px-7 rounded-x10 gap-4 w-full"
+              color="primary"
+              endContent={<Icon name="icon-chevron-right" />}
+            >
+              Delegate
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

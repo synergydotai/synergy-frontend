@@ -1,4 +1,5 @@
 export type IconNames =
+  | "icon-check-verified"
   | "icon-chevron-down"
   | "icon-chevron-right"
   | "icon-code-02"

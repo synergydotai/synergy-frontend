@@ -1,7 +1,5 @@
 import { FC } from "@/utils/types";
-import Image from "next/image";
 import React from "react";
-import networkImage from "@/assets/images/hero-network.svg";
 import { HOME_SECTIONS } from "@/utils/constants";
 import { ParticlesPro } from "@/components/atoms/Particles";
 

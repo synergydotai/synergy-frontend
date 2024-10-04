@@ -2,8 +2,9 @@
 import Button from "@/components/atoms/Button";
 import HomeMetricCard from "@/components/atoms/HomeMetricCard";
 import Icon from "@/components/atoms/Icon";
-import { HOME_SECTIONS } from "@/utils/constants";
+import { HOME_SECTIONS, ROUTES } from "@/utils/constants";
 import { FC, MetricResponseType } from "@/utils/types";
+import Link from "next/link";
 import React from "react";
 import { toast } from "react-toastify";
 
@@ -23,20 +24,24 @@ const Metrics: FC<Props> = ({ metrics }) => {
     >
       <div className="container mx-auto flex flex-col gap-8 ">
         <div className="grid sm:grid-cols-2 gap-4">
-          <Button
-            className="p-5 rounded-x20"
-            startContent={<Icon name="icon-code-02" />}
-            endContent={<Icon name="icon-chevron-right" />}
-            color="black"
-          >
-            btcli stake...
-          </Button>
-          <Button
-            className="p-5 rounded-x20 gap-4"
-            endContent={<Icon name="icon-chevron-right" />}
-          >
-            Delegate
-          </Button>
+          <Link href={ROUTES.DELEGATE} className="block">
+            <Button
+              className="p-5 rounded-x20 w-full"
+              startContent={<Icon name="icon-code-02" />}
+              endContent={<Icon name="icon-chevron-right" />}
+              color="black"
+            >
+              btcli stake...
+            </Button>
+          </Link>
+          <Link href={ROUTES.DELEGATE} className="block">
+            <Button
+              className="p-5 rounded-x20 gap-4 w-full"
+              endContent={<Icon name="icon-chevron-right" />}
+            >
+              Delegate
+            </Button>
+          </Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-8">
           <HomeMetricCard

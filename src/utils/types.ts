@@ -35,6 +35,19 @@ export type PageFC<
   ): ReactElement | null | Promise<ReactElement | null>;
   displayName?: string;
 };
+export type FormState<SuccessPayload = any, ErrorPayload = any> =
+  | undefined
+  | { success: true; data?: SuccessPayload }
+  | {
+      success: false;
+      message: string;
+      data?: ErrorPayload;
+    };
+
+export type WalletInfo = {
+  address: string;
+  source: string;
+};
 
 export type MetricsType = {
   id: string;

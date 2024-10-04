@@ -1,16 +1,22 @@
 import { cls } from "@/utils/helper";
 import { FC } from "@/utils/types";
 import Link from "next/link";
-import React from "react";
+import React, { HTMLProps } from "react";
 
-type Props = {
+type Props = HTMLProps<HTMLLIElement> & {
   href: string;
   classNames?: { li?: string; a?: string };
 };
 
-const NavItem: FC<Props> = ({ href, children, className, classNames }) => {
+const NavItem: FC<Props> = ({
+  href,
+  children,
+  className,
+  classNames,
+  ...props
+}) => {
   return (
-    <li className={cls(classNames?.li)}>
+    <li className={cls(classNames?.li)} {...props}>
       <Link
         href={href}
         className={cls(
