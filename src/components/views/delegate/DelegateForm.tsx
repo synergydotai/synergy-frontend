@@ -92,7 +92,7 @@ const DelegateForm: FC = () => {
   }, [status]);
 
   return (
-    <div className="w-full md:min-w-[612px] md:w-1/2 bg-white rounded-x20 p-10 flex flex-col justify-between relative">
+    <div className="min-w-full md:min-w-[612px]  !max-w-[930px] flex-1 bg-white rounded-x20 p-10 flex flex-col justify-between relative">
       {!status?.success ? (
         <>
           {(connectingWallet || fetchingBalance) && (

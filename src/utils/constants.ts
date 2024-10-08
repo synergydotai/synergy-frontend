@@ -20,6 +20,8 @@ export const MOCK_API_ENDPOINT =
 
 export const VAAS_APP_URL = "https://vaas.synergydots.ai/";
 export const X_PROFILE_URL = "https://x.com/synergydotsai";
+export const DISCORD_URL = "https://discord.gg/vcDgngDb47";
+export const GITHUB_URL = "https://github.com/synergydotai/";
 
 export const TAO = "τ";
 export const PLANCK_PER_TAO = 1e9;
