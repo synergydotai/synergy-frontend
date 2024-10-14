@@ -21,8 +21,8 @@ const About: FC = () => {
           <span className="text-gray-dark">is your opportunity</span>{" "}
           <span className="text-darker opacity-20">
             to immerse yourself in the world of decentralized innovation. We
-            offer products taht combine AI and real-world capabilities, bringing
-            the cost down and the efficiency up.
+            offer products that combine AI and real-world capabilities, bringing
+            down the costs and increasing efficiency.
           </span>
         </article>
         <Image

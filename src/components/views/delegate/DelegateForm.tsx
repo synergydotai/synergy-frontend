@@ -1,7 +1,6 @@
 import Button from "@/components/atoms/Button";
 import Icon from "@/components/atoms/Icon";
 import Input from "@/components/atoms/Input";
-// import { useSession, useUserTierInfo } from "@/hooks/userHooks";
 import { TAO } from "@/utils/constants";
 import { FC, FormState } from "@/utils/types";
 import Image from "next/image";
@@ -17,7 +16,6 @@ import { toast } from "react-toastify";
 
 const DelegateForm: FC = () => {
   const { connect, getBalance, stakeTao, unstakeTao } = useWallet();
-  //   const { data: userTier, isFetching: loadingUserTier } = useUserTierInfo();
 
   const [wallets, setWallets] = useState<InjectedAccountWithMeta[]>([]);
   const [wallet, setWallet] = useState<InjectedAccountWithMeta>();
@@ -107,12 +105,11 @@ const DelegateForm: FC = () => {
             <h2 className="text-4xl font-medium mb-5">Delegate TAO</h2>
             <span className="font-mono text-gray text-sm">
               Maximize your income with Synergy validator and boost its capacity
-              on the Bittensor network. Delegating is risk free and the tao
+              on the Bittensor network. Delegating is risk-free, and the tao
               never leaves your wallet
             </span>
           </header>
           <div className="flex flex-col gap-4">
-            {/* <input hidden readOnly name="balance" value={walletBalance || ""} /> */}
             <div className="grid">
               <span className="text-gray font-mono text-sm">Wallet:</span>
               {wallets.length ? (
@@ -125,15 +122,6 @@ const DelegateForm: FC = () => {
                       ...wallets?.map((wallet) => {
                         return { label: wallet.address, value: wallet.address };
                       }),
-                      //   {
-                      //     action: connectWallet,
-                      //     label: (
-                      //       <>
-                      //         <Icon name="icon-plus" className="!text-sm" />
-                      //         <span>Add wallet</span>
-                      //       </>
-                      //     ),
-                      //   },
                     ]}
                     defaultSelected={wallet?.address}
                   />

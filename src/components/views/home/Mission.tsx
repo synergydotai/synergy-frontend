@@ -12,7 +12,7 @@ const Mission = () => {
       id={HOME_SECTIONS.MISSION}
     >
       <div className="container mx-auto py-7 md:p-14 h-full relative pb-[420px] sm:!pb-[450px]">
-        <HomeSectionHeader>company's mission</HomeSectionHeader>
+        <HomeSectionHeader>our mission</HomeSectionHeader>
         <div className="max-w-[500px] ml-auto flex flex-col gap-10 md:mr-10 text-gray-darker pt-14 md:pt-20">
           <h1 className="font-sans text-3xl md:text-5xl mb-5">
             We create synergy between AI and the real world
