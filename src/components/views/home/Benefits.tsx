@@ -43,11 +43,11 @@ const Benefits = () => {
             />
             <div className="flex items-center justify-center flex-col w-full md:w-4/5 min-w-md mx-auto">
               <h4 className="text-3xl md:text-6xl max-w-[580px]">
-                Don’t find what you are looking for?
+                Didn’t find what you were looking for?
               </h4>
               <span className="text-sm md:text-xl pt-5 pb-9 w-11/12 max-w-[400px] font-mono">
                 Get in touch with us to help you deliver a more powerful product
-                leveraging bittensor subnets
+                leveraging biττensor subnets
               </span>
               <form className="w-full md:w-[85%] mt-14 md:mt-20 mx-auto flex flex-col gap-4">
                 <input

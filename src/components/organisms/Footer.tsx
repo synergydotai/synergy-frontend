@@ -44,6 +44,9 @@ const Footer: FC = () => {
                 >
                   Benefits
                 </NavItem>
+                <NavItem href="" classNames={{ li: "mb-4 md:mb-6" }}>
+                  Docs
+                </NavItem>
               </ul>
             </div>
           </div>
@@ -88,6 +91,9 @@ const Footer: FC = () => {
                 classNames={{ li: "mb-4 md:mb-6" }}
               >
                 Benefits
+              </NavItem>
+              <NavItem href="" classNames={{ li: "mb-4 md:mb-6" }}>
+                Docs
               </NavItem>
             </ul>
           </div>

@@ -56,7 +56,7 @@ export const useWallet = () => {
       //   if wallet extension doesn't exists
       if (extensions.length === 0) {
         throw new Error(
-          "No extension installed, installed the bittensor wallet and try again"
+          "No extension installed, install bittensor wallet and try again"
         );
       }
 

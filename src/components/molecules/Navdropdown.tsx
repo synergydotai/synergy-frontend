@@ -68,6 +68,13 @@ const Navdropdown: FC<Props> = ({ isOpen, close }) => {
               >
                 Consulting
               </NavItem>
+              <NavItem
+                href=""
+                classNames={{ li: "w-full lg:w-[unset]", a: "w-full block" }}
+                onClick={close}
+              >
+                Docs
+              </NavItem>
             </ul>
           </nav>
           <Link href={ROUTES.DELEGATE} className="block w-full" onClick={close}>

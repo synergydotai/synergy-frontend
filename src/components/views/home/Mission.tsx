@@ -18,11 +18,11 @@ const Mission = () => {
             We create synergy between AI and the real world
           </h1>
           <span className="font-mono text-xl max-w-[90%]">
-            providing you with affordable tools to integrate technological
-            innovation into your life
+            Providing you with affordable tools to integrate technological
+            innovation into your life.
           </span>
           <span className="font-mono text-xl max-w-[90%] self-end text-right">
-            developing decentralized solutions that ensure sustainable
+            Developing decentralized solutions that ensure sustainable
             development of the ecosystem and maximum efficiency.
           </span>
         </div>

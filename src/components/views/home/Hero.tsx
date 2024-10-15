@@ -16,12 +16,12 @@ const Hero: FC = () => {
             </h1>
             <ul className="px-6 sm:pl-10 text-gray list-disc list-outside font-mono lg:max-w-[550px] text-sm sm:text-2xl">
               <li className="mt-5 sm:mt-10">
-                Lowering the barrier to leverage bittensor products
+                Lowering the barrier to leverage biττensor products
               </li>
               <li className="mt-5 sm:nt-10">
                 Aiming for long term sustainability of the ecosystem
               </li>
-              <li className="mt-5 sm:mt-10">Loyal to bittensor ethos</li>
+              <li className="mt-5 sm:mt-10">Loyal to biττensor ethos</li>
             </ul>
           </div>
         </div>

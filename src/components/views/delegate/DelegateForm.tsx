@@ -105,7 +105,7 @@ const DelegateForm: FC = () => {
             <h2 className="text-4xl font-medium mb-5">Delegate TAO</h2>
             <span className="font-mono text-gray text-sm">
               Maximize your income with Synergy validator and boost its capacity
-              on the Bittensor network. Delegating is risk-free, and the tao
+              on the Biττensor network. Delegating is risk-free, and the tao
               never leaves your wallet
             </span>
           </header>

@@ -30,6 +30,7 @@ const Navbar = () => {
                 Our Products
               </NavItem>
               <NavItem href="">Consulting</NavItem>
+              <NavItem href="">Docs</NavItem>
             </ul>
           </nav>
           <Link href={ROUTES.DELEGATE}>
