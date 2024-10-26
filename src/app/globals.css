@@ -22,3 +22,36 @@
 html {
   @apply bg-gray-bg;
 }
+
+
+/* inputs */
+/* active and when it has an input */
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  @apply -top-[30%] left-[18px] text-xs bg-white font-medium;
+}
+/* when it has an input and it's not focused -- filled state*/
+.input-group
+  input:not(:placeholder-shown):not(:focus):not([data-success]):not(
+    [data-error]
+  ):not([data-info]):not([data-warning])
+  + label {
+  @apply opacity-0 top-1;
+}
+/* active state */
+.input-group input:focus + label {
+  @apply text-primary;
+}
+/* success state */
+.input-group input[data-success] + label {
+  @apply text-success;
+}
+/* info state */
+.input-group input[data-info] + label {
+  @apply text-primary;
+}
+/* error state + warning state */
+.input-group input[data-error] + label,
+.input-group input[data-warning] + label {
+  @apply text-error;
+}

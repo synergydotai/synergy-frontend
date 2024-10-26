@@ -5,15 +5,15 @@ import customSupport from "@/assets/images/custom-support.svg";
 import flexibleSolutions from "@/assets/images/flexible-solution.svg";
 import robustSecurity from "@/assets/images/robust-security.svg";
 import stableInfrastructure from "@/assets/images/stable-infrastructure.svg";
-import { HOME_SECTIONS, VAAS_APP_URL } from "@/utils/constants";
+import { HOME_SECTIONS } from "@/utils/constants";
 import ProductCard from "@/components/atoms/ProductCard";
 import bgDesign from "@/assets/images/products-bg-design.svg";
 import Image from "next/image";
-import { cls } from "@/utils/helper";
-import Button from "@/components/atoms/Button";
 import Icon from "@/components/atoms/Icon";
 import gameController from "@/assets/icons/game-controller.svg";
 import shoppingCart from "@/assets/icons/shopping-cart.svg";
+import search from "@/assets/icons/search.svg";
+import GetInTouchForm from "./GetInTouchForm";
 
 const Benefits = () => {
   return (
@@ -26,12 +26,17 @@ const Benefits = () => {
         {/* products */}
         <div className="grid lg:grid-cols-2 my-10 gap-7 md:gap-7.5">
           <div className="grid sm:grid-cols-2 gap-4 md:gap-y-7.5 md:gap-x-8 ">
-            <ProductCard isActive link={VAAS_APP_URL}>
-              Validator As A Service
-            </ProductCard>
+            <ProductCard src={search} />
             <ProductCard src={gameController} />
             <ProductCard src={shoppingCart} />
-            <ProductCard />
+            <ProductCard
+              icon={
+                <Icon
+                  name="icon-quill"
+                  className="text-gray-lighter !text-7xl"
+                />
+              }
+            />
           </div>
           <div className="rounded-x20 bg-primary relative flex items-center justify-center flex-col text-center text-white p-7.5 py-14">
             <Image
@@ -49,23 +54,14 @@ const Benefits = () => {
                 Get in touch with us to help you deliver a more powerful product
                 leveraging biττensor subnets
               </span>
-              <form className="w-full md:w-[85%] mt-14 md:mt-20 mx-auto flex flex-col gap-4">
-                <input
-                  type="email"
-                  placeholder="E-Mail"
-                  className={cls(
-                    "block w-full bg-transparent py-3 px-4 border border-white rounded-x10",
-                    "placeholder:font-sans placeholder:text-white"
-                  )}
-                />
-                <Button
-                  color="white"
-                  endContent={<Icon name="icon-chevron-right" />}
-                  className="w-full p-3 rounded-x10"
-                >
-                  Get in touch
-                </Button>
-              </form>
+              <GetInTouchForm
+                bgColor="primary"
+                classNames={{
+                  form: "w-full md:w-[85%] mt-14 md:mt-20 mx-auto flex flex-col gap-4",
+                  input:
+                    "block w-full py-3 px-4 border !border-white !bg-transparent rounded-x10 placeholder:font-sans placeholder:text-white",
+                }}
+              />
             </div>
           </div>
         </div>

@@ -13,12 +13,10 @@ export const HOME_SECTIONS = {
 export const ROUTES = {
   HOME: "/",
   DELEGATE: "/delegate",
+  CONTACT: "/contact",
 };
 
-export const MOCK_API_ENDPOINT =
-  "https://66d0506f181d059277de15dc.mockapi.io/api/v1/stakes";
-
-export const VAAS_APP_URL = "https://vaas.synergydots.ai/";
+// export const VAAS_APP_URL = "https://vaas.synergydots.ai/";
 export const X_PROFILE_URL = "https://x.com/synergydotsai";
 export const DISCORD_URL = "https://discord.gg/vcDgngDb47";
 export const GITHUB_URL = "https://github.com/synergydotai/";

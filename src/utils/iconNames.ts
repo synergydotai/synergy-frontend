@@ -1,5 +1,6 @@
 export type IconNames =
   | "icon-check-verified"
+  | "icon-checked-square"
   | "icon-chevron-down"
   | "icon-chevron-right"
   | "icon-code-02"
@@ -7,4 +8,6 @@ export type IconNames =
   | "icon-github"
   | "icon-linkedin"
   | "icon-menu-02"
-  | "icon-x";
+  | "icon-quill"
+  | "icon-x"
+  | "icon-x-close";

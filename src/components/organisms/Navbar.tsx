@@ -33,12 +33,12 @@ const Navbar = () => {
               <NavItem href="">Docs</NavItem>
             </ul>
           </nav>
-          <Link href={ROUTES.DELEGATE}>
+          <Link href={ROUTES.CONTACT}>
             <Button
               className="py-4 px-7 rounded-x10 gap-4"
               endContent={<Icon name="icon-chevron-right" />}
             >
-              Delegate
+              Contact Us
             </Button>
           </Link>
         </div>

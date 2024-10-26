@@ -13,6 +13,8 @@ import { FC } from "@/utils/types";
 import { cls } from "@/utils/helper";
 import Button from "../atoms/Button";
 import Icon from "../atoms/Icon";
+import Input from "../atoms/Input";
+import GetInTouchForm from "../views/home/GetInTouchForm";
 
 const Footer: FC = () => {
   return (
@@ -54,22 +56,12 @@ const Footer: FC = () => {
             <h5 className="hidden lg:block text-gray-darker mb-5 md:text-xl font-medium md:mb-10">
               Contact us:
             </h5>
-            <form className="w-full md:w-[85%] mt-10 md:mt-0 flex flex-col gap-4">
-              <input
-                type="email"
-                placeholder="E-Mail"
-                className={cls(
-                  "block w-full bg-transparent py-3 px-4 border border-[#8E8E8E80] rounded-x10",
-                  "placeholder:font-sans placeholder:text-gray"
-                )}
-              />
-              <Button
-                endContent={<Icon name="icon-chevron-right" />}
-                className="w-full p-3 rounded-x10"
-              >
-                Get in touch
-              </Button>
-            </form>
+            <GetInTouchForm
+              bgColor="white"
+              classNames={{
+                form: "w-full md:w-[85%] mt-10 md:mt-0 flex flex-col gap-4",
+              }}
+            />
           </div>
           <div className="md:text-xl font-medium md:hidden">
             <h5 className="text-gray-darker mb-5 md:mb-10">Menu:</h5>

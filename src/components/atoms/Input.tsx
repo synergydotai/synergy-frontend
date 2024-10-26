@@ -112,7 +112,7 @@ const Input: FC<InputProps> = ({
           <label
             htmlFor={id || name}
             className={cls(
-              "text-base text-gray-darker absolute left-6 top-2 px-1.5 py-0.5 leading-0 transition-all duration-200 rounded-lg pointer-events-none",
+              "text-sm text-gray-darker absolute left-6 top-2.5 px-1.5 py-0.5 leading-0 transition-all duration-200 rounded-lg pointer-events-none",
               classNames?.label
             )}
           >

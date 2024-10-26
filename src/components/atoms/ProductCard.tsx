@@ -1,6 +1,6 @@
 import { cls } from "@/utils/helper";
 import { FC } from "@/utils/types";
-import React from "react";
+import React, { ReactNode } from "react";
 import Icon from "./Icon";
 import Image from "next/image";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
@@ -10,9 +10,10 @@ type Props = {
   isActive?: boolean;
   src?: StaticImport;
   link?: string;
+  icon?: ReactNode;
 };
 
-const ProductCard: FC<Props> = ({ children, isActive, src, link }) => {
+const ProductCard: FC<Props> = ({ children, isActive, src, link, icon }) => {
   return (
     <Link
       href={link || ""}
@@ -21,16 +22,24 @@ const ProductCard: FC<Props> = ({ children, isActive, src, link }) => {
         isActive ? "bg-gray-darker" : "bg-gray-lighter"
       )}
     >
-      {src && (
+      {(src || icon) && (
         <div className="absolute top-0 left-0 p-8">
-          <div className="bg-[#c0c0c0] rounded-lg w-14 h-14 sm:rounded-[15px] sm:w-[100px] sm:h-[100px] flex justify-center items-center">
-            <Image
-              src={src}
-              width={50}
-              height={50}
-              alt="icon"
-              className="sm:w-16 sm:h-16 w-8 h-8"
-            />
+          <div
+            className={cls(
+              "bg-[#c0c0c0] rounded-lg w-14 h-14 sm:rounded-[15px] sm:w-[100px] sm:h-[100px] flex justify-center items-center"
+            )}
+          >
+            {src ? (
+              <Image
+                src={src}
+                width={50}
+                height={50}
+                alt="icon"
+                className="sm:w-16 sm:h-16 w-8 h-8"
+              />
+            ) : (
+              icon ?? null
+            )}
           </div>
         </div>
       )}
