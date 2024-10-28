@@ -1,11 +1,17 @@
+"use client";
+
+import { sendContactUsMail } from "@/app/contact/action";
 import Button from "@/components/atoms/Button";
 import Checkbox from "@/components/atoms/Checkbox";
 import Icon from "@/components/atoms/Icon";
 import Input from "@/components/atoms/Input";
+import SubmitButton from "@/components/atoms/SubmitButton";
 import Modal from "@/components/organisms/Modal";
 import { useGetInTouchModal } from "@/hooks/popupHooks";
-import { FC } from "@/utils/types";
-import React from "react";
+import { FC, FormState } from "@/utils/types";
+import React, { useEffect } from "react";
+import { useFormState } from "react-dom";
+import { toast } from "react-toastify";
 
 type Props = {
   email: string;
@@ -13,6 +19,19 @@ type Props = {
 
 const GetInTouchModal: FC<Props> = ({ email }) => {
   const { isOpen, close } = useGetInTouchModal();
+  const [state, action] = useFormState<FormState, FormData>(
+    sendContactUsMail,
+    undefined
+  );
+
+  useEffect(() => {
+    if (state?.success) {
+      toast.success(state.message);
+    } else {
+      toast.error(state?.message);
+    }
+  }, [state]);
+
   return (
     <Modal
       isOpen={isOpen}
@@ -30,7 +49,8 @@ const GetInTouchModal: FC<Props> = ({ email }) => {
           <Icon name="icon-x-close" />
         </button>
       </header>
-      <form className="flex flex-col gap-1">
+      <form className="flex flex-col gap-1" action={action}>
+        <input type="hidden" value={email} name="email" readOnly />
         <Input name="topic" label="Topic" required />
         <Input name="company" label="Company" required />
         <Input name="role" label="Role" required />
@@ -45,18 +65,18 @@ const GetInTouchModal: FC<Props> = ({ email }) => {
           rows={4}
         />
         <div className="my-3">
-          <Checkbox>
+          <Checkbox name="allowGetInTouch" id="allowGetInTouch">
             By submiting you confirm you allow us to get in touch with you using
             this information
           </Checkbox>
         </div>
-        <Button
+        <SubmitButton
           color="primary"
           endContent={<Icon name="icon-chevron-right" />}
           className="w-full p-3 rounded-x10 mt-2"
         >
           Get in touch
-        </Button>
+        </SubmitButton>
       </form>
     </Modal>
   );

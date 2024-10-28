@@ -68,23 +68,23 @@ const Benefits = () => {
         {/* benefits */}
         <div className="grid md:grid-cols-2 xl:grid-cols-4  gap-10 mt-8 md:mt-20">
           <HomeBenefitCard
-            label="Custom Support"
-            description="You receive personalized support tailored to your unique needs, with prompt assistance and solutions designed specifically for your requests."
+            label="Product Development Expertise"
+            description="We transform subnet outputs into easy to use, market-ready solutions, implementing our deep understanding of bittensor's ecosystem to build from zero."
             src={customSupport}
           />
           <HomeBenefitCard
-            label="Flexible Solutions"
-            description="Choose from various access tiers to manage your validators and subnets according to your specific needs and staking volumes."
+            label="Strategic Consulting "
+            description="Benefit from our extensive experience in the bittensor network to guide your project development, integration strategies, and technical implementation."
             src={flexibleSolutions}
           />
           <HomeBenefitCard
-            label="Robust Security"
-            description="Rely on continuous monitoring and system optimization from our experienced team, ensuring 24/7 protection."
+            label="Custom Integration Services"
+            description="Get tailored assistance in leveraging subnet outputs into your existing systems or new products, with solutions scaled to your specific business needs."
             src={robustSecurity}
           />
           <HomeBenefitCard
-            description="Experience efficient, fast, and accurate data processing across all your subnets with our high-performance hardware."
-            label="Stable Infrastructure"
+            label="Technical Excellence"
+            description="Our team combines proven expertise in bittensor architecture with cutting-edge development practices to deliver robust, production-ready solutions."
             src={stableInfrastructure}
           />
         </div>

@@ -37,7 +37,7 @@ export type PageFC<
 };
 export type FormState<SuccessPayload = any, ErrorPayload = any> =
   | undefined
-  | { success: true; data?: SuccessPayload }
+  | { success: true; data?: SuccessPayload; message: string }
   | {
       success: false;
       message: string;

@@ -28,6 +28,7 @@ const GetInTouchForm: FC<Props> = ({ bgColor, classNames }) => {
         name="email"
         placeholder="E-Mail"
         className={cls("", classNames?.input)}
+        required
       />
       <Button
         color={bgColor === "primary" ? "white" : "primary"}

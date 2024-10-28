@@ -10,7 +10,16 @@ const ContactUs: FC = () => {
         <div className="overflow-hidden flex-1 rounded-x20 min-w-80 min-h-20">
           <ParticlesPro />
         </div>
-        <ContactUsForm />
+        <div className="min-w-full md:min-w-[612px] !max-w-[930px] flex-1 bg-white rounded-x20 p-10 flex flex-col justify-between relative">
+          <header className="w-11/12 text-gray-dark mb-6 ">
+            <h2 className="text-4xl font-medium mb-5">Contact Us</h2>
+            <span className="font-mono text-gray text-sm">
+              Get in touch with us to help you deliver a more powerful product
+              leveraging biττensor subnets
+            </span>
+          </header>
+          <ContactUsForm />
+        </div>
       </div>
     </section>
   );

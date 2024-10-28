@@ -3,7 +3,10 @@ import { FC } from "@/utils/types";
 import React, { HTMLProps, ReactNode } from "react";
 import SvgSpinner from "./Spinner";
 
-type Props = Omit<HTMLProps<HTMLButtonElement>, "type" | "size"> & {
+export type ButtonProps = Omit<
+  HTMLProps<HTMLButtonElement>,
+  "type" | "size"
+> & {
   color?: "primary" | "gray" | "white" | "black";
   type?: "button" | "submit" | "reset";
   startContent?: ReactNode;
@@ -19,7 +22,7 @@ const buttonTypes = {
   black: "bg-gray-darker text-white hover:bg-gray-hover",
 };
 
-const Button: FC<Props> = ({
+const Button: FC<ButtonProps> = ({
   children,
   color = "primary",
   startContent,

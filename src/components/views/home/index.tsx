@@ -13,7 +13,7 @@ const Home: FC = () => {
       <About />
       <Mission />
       <Benefits />
-      <Instructions />
+      {/* <Instructions /> */}
     </main>
   );
 };

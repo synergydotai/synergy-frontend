@@ -24,7 +24,7 @@ const Checkbox: FC<Props> = ({
         name={name}
         className={cls("absolute opacity-0 peer", className)}
         {...props}
-        checked={checked}
+        // checked={checked}
       />
       <div
         data-checked={checked}
