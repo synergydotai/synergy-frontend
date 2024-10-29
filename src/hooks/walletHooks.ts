@@ -200,6 +200,7 @@ export const useWallet = () => {
             onResponseResolve({
               success: true,
               data: { action: "delegation", amount },
+              message: "",
             });
           }
         }
@@ -271,6 +272,7 @@ export const useWallet = () => {
             onResponseResolve({
               success: true,
               data: { action: "undelegation", amount },
+              message: "",
             });
           }
         }

@@ -9,7 +9,7 @@ import SubmitButton from "@/components/atoms/SubmitButton";
 import Modal from "@/components/organisms/Modal";
 import { useGetInTouchModal } from "@/hooks/popupHooks";
 import { FC, FormState } from "@/utils/types";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useFormState } from "react-dom";
 import { toast } from "react-toastify";
 
@@ -18,6 +18,7 @@ type Props = {
 };
 
 const GetInTouchModal: FC<Props> = ({ email }) => {
+  const ref = useRef<HTMLFormElement>(null);
   const { isOpen, close } = useGetInTouchModal();
   const [state, action] = useFormState<FormState, FormData>(
     sendContactUsMail,
@@ -27,6 +28,8 @@ const GetInTouchModal: FC<Props> = ({ email }) => {
   useEffect(() => {
     if (state?.success) {
       toast.success(state.message);
+      ref.current?.reset();
+      close();
     } else {
       toast.error(state?.message);
     }
@@ -49,7 +52,7 @@ const GetInTouchModal: FC<Props> = ({ email }) => {
           <Icon name="icon-x-close" />
         </button>
       </header>
-      <form className="flex flex-col gap-1" action={action}>
+      <form className="flex flex-col gap-1" ref={ref} action={action}>
         <input type="hidden" value={email} name="email" readOnly />
         <Input name="topic" label="Topic" required />
         <Input name="company" label="Company" required />

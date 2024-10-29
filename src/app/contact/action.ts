@@ -17,8 +17,6 @@ export const sendContactUsMail = async (_: FormState, formdata: FormData) => {
   const { email, topic, company, role, message, allowGetInTouch } =
     Object.fromEntries(formdata);
 
-  console.log("hello");
-
   try {
     const transporter = nodemailer.createTransport({
       host: MAIL_SERVER,
