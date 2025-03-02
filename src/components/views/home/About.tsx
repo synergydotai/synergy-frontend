@@ -17,7 +17,7 @@ const About: FC = () => {
           <Image height={40} width={72} alt="black-logo" src={logo} />
         </div>
         <article className="max-w-[900px] text-center px-10 text-2xl lg:text-5xl">
-          <span className="text-primary">Synergy.ai</span>{" "}
+          <span className="text-primary">Synergy</span>{" "}
           <span className="text-gray-dark">is your opportunity</span>{" "}
           <span className="text-darker opacity-20">
             to immerse yourself in the world of decentralized innovation. We

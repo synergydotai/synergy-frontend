@@ -1,16 +1,13 @@
 "use client";
 
-import { sendContactUsMail } from "@/app/contact/action";
 import Button from "@/components/atoms/Button";
 import Checkbox from "@/components/atoms/Checkbox";
 import Icon from "@/components/atoms/Icon";
 import Input from "@/components/atoms/Input";
-import SubmitButton from "@/components/atoms/SubmitButton";
 import Modal from "@/components/organisms/Modal";
 import { useGetInTouchModal } from "@/hooks/popupHooks";
-import { FC, FormState } from "@/utils/types";
+import { FC } from "@/utils/types";
 import React, { useEffect, useRef } from "react";
-import { useFormState } from "react-dom";
 import { toast } from "react-toastify";
 
 type Props = {
@@ -20,20 +17,13 @@ type Props = {
 const GetInTouchModal: FC<Props> = ({ email }) => {
   const ref = useRef<HTMLFormElement>(null);
   const { isOpen, close } = useGetInTouchModal();
-  const [state, action] = useFormState<FormState, FormData>(
-    sendContactUsMail,
-    undefined
-  );
 
-  useEffect(() => {
-    if (state?.success) {
-      toast.success(state.message);
-      ref.current?.reset();
-      close();
-    } else {
-      toast.error(state?.message);
-    }
-  }, [state]);
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast.success("Thank you for your message! We'll be in touch soon.");
+    ref.current?.reset();
+    close();
+  };
 
   return (
     <Modal
@@ -52,7 +42,7 @@ const GetInTouchModal: FC<Props> = ({ email }) => {
           <Icon name="icon-x-close" />
         </button>
       </header>
-      <form className="flex flex-col gap-1" ref={ref} action={action}>
+      <form className="flex flex-col gap-1" ref={ref} onSubmit={handleSubmit}>
         <input type="hidden" value={email} name="email" readOnly />
         <Input name="topic" label="Topic" required />
         <Input name="company" label="Company" required />
@@ -69,17 +59,18 @@ const GetInTouchModal: FC<Props> = ({ email }) => {
         />
         <div className="my-3">
           <Checkbox name="allowGetInTouch" id="allowGetInTouch">
-            By submiting you confirm you allow us to get in touch with you using
+            By submitting you confirm you allow us to get in touch with you using
             this information
           </Checkbox>
         </div>
-        <SubmitButton
+        <Button
+          type="submit"
           color="primary"
           endContent={<Icon name="icon-chevron-right" />}
           className="w-full p-3 rounded-x10 mt-2"
         >
           Get in touch
-        </SubmitButton>
+        </Button>
       </form>
     </Modal>
   );

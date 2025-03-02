@@ -17,14 +17,18 @@ const GetInTouchForm: FC<Props> = ({ bgColor, classNames }) => {
   const { open } = useGetInTouchModal();
   const ref = useRef<HTMLFormElement>(null);
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const formData = new FormData(ref.current!);
+    open(formData.get("email") as string);
+    ref.current?.reset();
+  };
+
   return (
     <form
       className={cls("", classNames?.form)}
       ref={ref}
-      action={async (formdata) => {
-        open(formdata.get("email") as string);
-        ref.current?.reset();
-      }}
+      onSubmit={handleSubmit}
     >
       <Input
         type="email"
@@ -34,6 +38,7 @@ const GetInTouchForm: FC<Props> = ({ bgColor, classNames }) => {
         required
       />
       <Button
+        type="submit"
         color={bgColor === "primary" ? "white" : "primary"}
         endContent={<Icon name="icon-chevron-right" />}
         className={cls("w-full p-3 rounded-x10", classNames?.button)}

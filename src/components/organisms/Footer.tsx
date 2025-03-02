@@ -52,17 +52,6 @@ const Footer: FC = () => {
               </ul>
             </div>
           </div>
-          <div className="w-full max-w-[465px]">
-            <h5 className="hidden lg:block text-gray-darker mb-5 md:text-xl font-medium md:mb-10">
-              Contact us:
-            </h5>
-            <GetInTouchForm
-              bgColor="white"
-              classNames={{
-                form: "w-full md:w-[85%] mt-10 md:mt-0 flex flex-col gap-4",
-              }}
-            />
-          </div>
           <div className="md:text-xl font-medium md:hidden">
             <h5 className="text-gray-darker mb-5 md:mb-10">Menu:</h5>
             <ul className="text-gray">

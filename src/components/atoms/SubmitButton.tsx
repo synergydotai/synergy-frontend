@@ -1,7 +1,6 @@
 import { ColorVariants, FC } from "@/utils/types";
-import { useFormStatus } from "react-dom";
 import Button, { ButtonProps } from "./Button";
-import React, { HTMLProps, ReactNode } from "react";
+import React, { HTMLProps, ReactNode, useState } from "react";
 
 type Props = Omit<HTMLProps<HTMLButtonElement>, "type" | "size"> &
   ButtonProps & {
@@ -12,7 +11,7 @@ type Props = Omit<HTMLProps<HTMLButtonElement>, "type" | "size"> &
   };
 
 const SubmitButton: FC<Props> = ({ children, startContent, ...props }) => {
-  const { pending } = useFormStatus();
+  const [pending, setPending] = useState(false);
 
   return (
     <Button type="submit" {...props} loading={pending}>

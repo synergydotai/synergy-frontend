@@ -29,18 +29,8 @@ const Navbar = () => {
               <NavItem href={`/#${HOME_SECTIONS.BENEFITS}`}>
                 Our Products
               </NavItem>
-              <NavItem href="">Consulting</NavItem>
-              <NavItem href="">Docs</NavItem>
             </ul>
           </nav>
-          <Link href={ROUTES.CONTACT}>
-            <Button
-              className="py-4 px-7 rounded-x10 gap-4"
-              endContent={<Icon name="icon-chevron-right" />}
-            >
-              Contact Us
-            </Button>
-          </Link>
         </div>
         <Button
           className="w-10 h-10 rounded-lg z-10 block lg:hidden"

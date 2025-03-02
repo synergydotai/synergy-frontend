@@ -22,7 +22,7 @@ const Benefits = () => {
       id={HOME_SECTIONS.BENEFITS}
     >
       <div className="container mx-auto py-7 md:p-14">
-        <HomeSectionHeader>our benefits</HomeSectionHeader>
+        <HomeSectionHeader>our products</HomeSectionHeader>
         {/* products */}
         <div className="grid lg:grid-cols-2 my-10 gap-7 md:gap-7.5">
           <div className="grid sm:grid-cols-2 gap-4 md:gap-y-7.5 md:gap-x-8 ">
@@ -54,39 +54,11 @@ const Benefits = () => {
                 Get in touch with us to help you deliver a more powerful product
                 leveraging biττensor subnets
               </span>
-              <GetInTouchForm
-                bgColor="primary"
-                classNames={{
-                  form: "w-full md:w-[85%] mt-14 md:mt-20 mx-auto flex flex-col gap-4",
-                  input:
-                    "block w-full py-3 px-4 border !border-white !bg-transparent rounded-x10 placeholder:font-sans placeholder:text-white",
-                }}
-              />
             </div>
           </div>
         </div>
         {/* benefits */}
         <div className="grid md:grid-cols-2 xl:grid-cols-4  gap-10 mt-8 md:mt-20">
-          <HomeBenefitCard
-            label="Product Development Expertise"
-            description="We transform subnet outputs into easy to use, market-ready solutions, implementing our deep understanding of bittensor's ecosystem to build from zero."
-            src={customSupport}
-          />
-          <HomeBenefitCard
-            label="Strategic Consulting "
-            description="Benefit from our extensive experience in the bittensor network to guide your project development, integration strategies, and technical implementation."
-            src={flexibleSolutions}
-          />
-          <HomeBenefitCard
-            label="Custom Integration Services"
-            description="Get tailored assistance in leveraging subnet outputs into your existing systems or new products, with solutions scaled to your specific business needs."
-            src={robustSecurity}
-          />
-          <HomeBenefitCard
-            label="Technical Excellence"
-            description="Our team combines proven expertise in bittensor architecture with cutting-edge development practices to deliver robust, production-ready solutions."
-            src={stableInfrastructure}
-          />
         </div>
       </div>
     </section>
