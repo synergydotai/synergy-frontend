@@ -17,11 +17,15 @@ type Props = {
 };
 
 const ProductCard: FC<Props> = ({ children, isActive, src, link, icon, backgroundImage, backgroundOpacity = "1" }) => {
+  const [isHovered, setIsHovered] = React.useState(false);
+
   const handleMouseEnter = () => {
+    setIsHovered(true);
     console.log("[ProductCard] Hover iniciado:", children);
   };
 
   const handleMouseLeave = () => {
+    setIsHovered(false);
     console.log("[ProductCard] Hover finalizado:", children);
   };
 
@@ -35,7 +39,8 @@ const ProductCard: FC<Props> = ({ children, isActive, src, link, icon, backgroun
       onMouseLeave={handleMouseLeave}
       className={cls(
         "w-full relative rounded-x20 transition-colors duration-300 flex items-center justify-center",
-        isSearchCard ? "bg-white border border-gray-300 shadow-sm" : isActive ? "bg-gray-darker" : "bg-gray-lighter"
+        isActive ? "bg-gray-darker" : "bg-gray-lighter",
+        isSearchCard && isHovered && "!bg-primary-hover"
       )}
       style={isSearchCard && backgroundImage ? {
         backgroundImage: `url(${backgroundImage})`,
@@ -48,7 +53,8 @@ const ProductCard: FC<Props> = ({ children, isActive, src, link, icon, backgroun
         <div className="absolute top-4 left-4">
           <div
             className={cls(
-              "rounded-lg w-14 h-14 sm:rounded-[15px] sm:w-[100px] sm:h-[100px] flex justify-center items-center bg-[#c0c0c0]"
+              `rounded-lg w-14 h-14 sm:rounded-[15px] sm:w-[100px] sm:h-[100px] flex justify-center items-center transition-all duration-300`,
+              isSearchCard && isHovered ? 'bg-[#E05A00]' : 'bg-[#c0c0c0]'
             )}
           >
             {src ? (
@@ -57,7 +63,10 @@ const ProductCard: FC<Props> = ({ children, isActive, src, link, icon, backgroun
                 width={50}
                 height={50}
                 alt="icon"
-                className="sm:w-16 sm:h-16 w-8 h-8 opacity-100"
+                className={cls(
+                  "sm:w-16 sm:h-16 w-8 h-8 opacity-100",
+                  isSearchCard && isHovered ? "filter brightness-0 invert" : ""
+                )}
               />
             ) : (
               icon ?? null
@@ -80,4 +89,3 @@ const ProductCard: FC<Props> = ({ children, isActive, src, link, icon, backgroun
 };
 
 export default ProductCard;
-
