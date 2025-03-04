@@ -1,29 +1,20 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Logo from "../atoms/Logo";
 import Button from "../atoms/Button";
 import Icon from "../atoms/Icon";
 import NavItem from "../atoms/NavItem";
 import Navdropdown from "../molecules/Navdropdown";
-import { HOME_SECTIONS } from "@/utils/constants";
+import { HOME_SECTIONS, ROUTES } from "@/utils/constants";
+import Link from "next/link";
 
 const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false);
 
-  useEffect(() => {
-    console.log("[Navbar] Componente montado");
-  }, []);
-
-  // Funciones
-  const toggleNav = () => {
-    console.log("[Navbar] Toggle navigation. Estado previo:", navOpen);
-    setNavOpen((curr) => !curr);
-  };
-  const closeNav = () => {
-    console.log("[Navbar] Cerrando navegación");
-    setNavOpen(false);
-  };
+  // functions
+  const toggleNav = () => setNavOpen((curr) => !curr);
+  const closeNav = () => setNavOpen(false);
 
   return (
     <header className="p-4 sm:p-8 sticky top-0 z-[5] w-full">
@@ -31,13 +22,16 @@ const Navbar = () => {
         <div className="max-w-28 sm:max-w-[200px] ml-1 sm:ml-6">
           <Logo />
         </div>
-        {/* Navegación centrada para pantallas grandes */}
-        <nav className="hidden lg:block absolute left-1/2 transform -translate-x-1/2">
-          <ul className="flex items-center gap-10">
-            <NavItem href={`/#${HOME_SECTIONS.HERO}`}>Home</NavItem>
-            <NavItem href={`/#${HOME_SECTIONS.BENEFITS}`}>Our Products</NavItem>
-          </ul>
-        </nav>
+        <div className="flex-1 lg:flex justify-between items-center hidden">
+          <nav className="flex-1">
+            <ul className="flex items-center justify-center gap-10 mx-auto">
+              <NavItem href={`/#${HOME_SECTIONS.HERO}`}>Home</NavItem>
+              <NavItem href={`/#${HOME_SECTIONS.BENEFITS}`}>
+                Our Products
+              </NavItem>
+            </ul>
+          </nav>
+        </div>
         <Button
           className="w-10 h-10 rounded-lg z-10 block lg:hidden"
           startContent={
@@ -52,4 +46,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

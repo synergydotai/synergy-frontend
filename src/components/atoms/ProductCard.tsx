@@ -6,27 +6,49 @@ import Image from "next/image";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Link from "next/link";
 
+// Definimos las propiedades que recibe ProductCard
 type Props = {
   isActive?: boolean;
   src?: StaticImport;
   link?: string;
   icon?: ReactNode;
+  backgroundImage?: StaticImport;
+  backgroundOpacity?: string;
 };
 
-const ProductCard: FC<Props> = ({ children, isActive, src, link, icon }) => {
+const ProductCard: FC<Props> = ({ children, isActive, src, link, icon, backgroundImage, backgroundOpacity = "1" }) => {
+  const handleMouseEnter = () => {
+    console.log("[ProductCard] Hover iniciado:", children);
+  };
+
+  const handleMouseLeave = () => {
+    console.log("[ProductCard] Hover finalizado:", children);
+  };
+
+  // Determinar si la tarjeta es la de la lupa
+  const isSearchCard = link === "https://explore-synergies.replit.app/";
+
   return (
     <Link
       href={link || ""}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       className={cls(
-        "w-full relative rounded-x20",
-        isActive ? "bg-gray-darker" : "bg-gray-lighter"
+        "w-full relative rounded-x20 transition-colors duration-300 flex items-center justify-center",
+        isSearchCard ? "bg-white border border-gray-300 shadow-sm" : isActive ? "bg-gray-darker" : "bg-gray-lighter"
       )}
+      style={isSearchCard && backgroundImage ? {
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        opacity: backgroundOpacity
+      } : {}}
     >
       {(src || icon) && (
-        <div className="absolute top-0 left-0 p-8">
+        <div className="absolute top-4 left-4">
           <div
             className={cls(
-              "bg-[#c0c0c0] rounded-lg w-14 h-14 sm:rounded-[15px] sm:w-[100px] sm:h-[100px] flex justify-center items-center"
+              "rounded-lg w-14 h-14 sm:rounded-[15px] sm:w-[100px] sm:h-[100px] flex justify-center items-center bg-[#c0c0c0]"
             )}
           >
             {src ? (
@@ -35,7 +57,7 @@ const ProductCard: FC<Props> = ({ children, isActive, src, link, icon }) => {
                 width={50}
                 height={50}
                 alt="icon"
-                className="sm:w-16 sm:h-16 w-8 h-8"
+                className="sm:w-16 sm:h-16 w-8 h-8 opacity-100"
               />
             ) : (
               icon ?? null
@@ -43,20 +65,19 @@ const ProductCard: FC<Props> = ({ children, isActive, src, link, icon }) => {
           </div>
         </div>
       )}
-      <div className={cls("pb-[60%] md:pb-[90%] ")} />
+      <div className={cls("pb-[60%] md:pb-[90%]" )} />
       <div
         className={cls(
-          "absolute bottom-0 flex justify-between items-end p-8 w-full font-mono",
-          isActive ? "text-white" : "text-gray-light"
+          "absolute bottom-4 flex justify-center items-center w-full font-mono text-gray-700 font-semibold text-center"
         )}
       >
-        <span className="md:text-xl max-w-28 text-inherit">
-          {children || "Soon..."}
+        <span className="md:text-xl max-w-full px-4">
+          {isSearchCard ? "Explore our How-To's" : children || "Soon..."}
         </span>
-        <Icon name="icon-chevron-right" />
       </div>
     </Link>
   );
 };
 
 export default ProductCard;
+
