@@ -30,7 +30,7 @@ const ProductCard: FC<Props> = ({ children, isActive, src, link, icon, backgroun
   };
 
   // Determinar si la tarjeta es la de la lupa
-  const isSearchCard = link === "https://explore.synergydots.ai";
+  const isSearchCard = link === "https://explore-synergies.replit.app/";
 
   return (
     <Link
